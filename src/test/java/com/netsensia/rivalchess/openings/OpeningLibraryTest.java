@@ -2,6 +2,7 @@ package com.netsensia.rivalchess.openings;
 
 import com.netsensia.rivalchess.model.Board;
 import com.netsensia.rivalchess.model.Move;
+import com.netsensia.rivalchess.model.util.BoardUtils;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -24,7 +25,7 @@ public class OpeningLibraryTest {
     public void testAllMovesAreLegal() {
         for (OpeningPosition opening : OpeningLibrary.getOpenings()) {
             final Board board = Board.fromFen(opening.getFen());
-            final List<Move> legalMoves = board.getLegalMoves();
+            final List<Move> legalMoves = BoardUtils.getLegalMoves(board);
             assertTrue(legalMoves.contains(opening.getMove()));
         }
     }

@@ -83,7 +83,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'com.netsensia.rivalchess', name: 'rivalchess-model', version: '5.0.0'
+    compile group: 'com.netsensia.rivalchess', name: 'rivalchess-model', version: '6.1.1'
     testImplementation 'junit:junit:4.12'
 }
 
