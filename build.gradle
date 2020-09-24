@@ -8,12 +8,24 @@ plugins {
     id 'java'
     id 'maven'
     id 'signing'
+    id 'maven-publish'
 }
 
 group = "com.netsensia.rivalchess"
 version = '1.0.5'
 
 jar.baseName("rivalchess-openings")
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
+}
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
