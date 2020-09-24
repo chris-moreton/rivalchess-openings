@@ -355,7 +355,13 @@ public class OpeningLibrary
 		return new ArrayList<>(openings);
 	}
 
-	public static Move getMove(String fen)
+	public static Move getMove(final String fen)
+	{
+		Random r = new Random();
+		return getMove(r.nextInt(), fen);
+	}
+
+	public static Move getMove(final int randomSeed, final String fen)
 	{
 		OpeningPosition position;
 		ArrayList<OpeningPosition> matched = new ArrayList<>();
@@ -381,7 +387,7 @@ public class OpeningLibrary
 				position = matched.get(i);
 				range += position.getFrequency();
 			}
-			Random r = new Random();
+			Random r = new Random(randomSeed);
 			int movePositionInRange = r.nextInt(range);
 			range = 0;
 			for (int i=0; i<size; i++)

@@ -14,9 +14,9 @@ A very small opening library. It makes use of the [Rival Chess Model](https://gi
     <dependency>
         <groupId>com.netsensia.rivalchess</groupId>
         <artifactId>rivalchess-openings</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.5</version>
     </dependency>
     
 #### Gradle
 
-    compile group: 'com.netsensia.rivalchess', name: 'rivalchess-model', version: '1.0.4'
+    compile group: 'com.netsensia.rivalchess', name: 'rivalchess-model', version: '1.0.5'
